@@ -2,22 +2,21 @@ let range_vision = n => {
     let num = String(n)
 
     for (let value of num ) {
-        let valueNumber = parseInt(value)
+        let valueNumber = parseInt(value);
       /*   let valueNegat = -valueNumber */
-        let position = num.indexOf(value) + 1
-        let positionLeft = position - valueNumber
-        let signo = Math.sign(positionLeft) 
-        /* signo === -1 | === 0 ? positionLeft = 1 : positionLeft */
-        let ternario = signo === -1 || signo === 0 ? positionLeft = 1 : positionLeft
-        let right = num.slice(position,valueNumber + 1)
-        let left = num.slice(position, ternario)
+        let position = num.indexOf(value) + 1;
+        let positionLeft = position - valueNumber;
+        let signo = Math.sign(positionLeft);
+        let ternario = signo === -1 || signo === 0 ? positionLeft = 1 : positionLeft;
+        let ternarioUno = ternario - 1;
+        let right = num.slice(position,valueNumber + 1);
+        let left = num.slice(ternarioUno, position - 1);
+        let rightLeft = String(left) + String(right)
 
-        console.log("valor > " + valueNumber);
-        console.log("posicion > " + position);
-        console.log("izquierda > " + left);
-        console.log("derecha > " + right);
-        console.log("negativo o positivo > " + signo);
-        console.log("------------------------------------");
+        let sum = 0;
+        rightLeft.split('').forEach(rightLeft => sum += parseInt(rightLeft) )
+
+        console.log("suma > " + sum);
     }
     return num 
 }
