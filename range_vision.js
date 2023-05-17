@@ -19,7 +19,7 @@ let range_vision = n => {
         console.log("negativo o positivo > " + signo);
         console.log("------------------------------------");
     }
-    return num
+    return num 
 }
 
 console.log(range_vision(34315));
